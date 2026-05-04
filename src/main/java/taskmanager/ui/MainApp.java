@@ -1,9 +1,8 @@
 package taskmanager.ui;
 
-import taskmanager.api.*;
-import taskmanager.impl.*;
-import taskmanager.model.*;
-import javax.swing.*;
+import javax.swing.SwingUtilities;
+
+import taskmanager.api.TaskManager;
 
 /**
  * Entry point for the Smart Task Manager application.
@@ -14,6 +13,9 @@ import javax.swing.*;
  * </ol>
  *
  * <p>If no API key is provided, the app runs in demo mode with simulated weather data.
+ */
+/**
+ * Main application entry point class.
  */
 public class MainApp {
 

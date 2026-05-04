@@ -1,19 +1,38 @@
 package taskmanager.ui;
 
-import taskmanager.api.*;
-import taskmanager.impl.*;
-import taskmanager.model.*;
-import taskmanager.exception.*;
-import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Schedulers;
-
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.UUID;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
+
+import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
+import taskmanager.api.SchedulePlanner;
+import taskmanager.api.TaskManager;
+import taskmanager.exception.TaskNotFoundException;
+import taskmanager.impl.DefaultTaskManager;
+import taskmanager.impl.DefaultTaskService;
+import taskmanager.model.ScheduleRecommendation;
+import taskmanager.model.Task;
 
 /**
  * Main Swing GUI for the Smart Task Manager.
@@ -30,14 +49,25 @@ import java.util.UUID;
  * UI updates always happen on the Event Dispatch Thread via SwingUtilities.invokeLater().
  */
 public class SmartTaskManagerFrame extends JFrame {
-
+/** The manager responsible for task logic. */
     private final TaskManager taskManager;
+
+    /** The service used to manage task data operations. */
     private final DefaultTaskService taskService;
+
+    /** The planner responsible for weather-based scheduling. */
     private final SchedulePlanner schedulePlanner;
 
+/** The table component displaying the list of tasks. */
     private final JTable taskTable;
-    private final DefaultTableModel tableModel;
+
+/** The table model containing the underlying task data. */    
+private final DefaultTableModel tableModel;
+
+    /** Label used to display system status updates to the user. */
     private final JLabel statusLabel;
+    
+    /** Field for entering the city name. */
     private final JTextField cityField = new JTextField("Jeddah", 12);
 
     private static final String[] COLUMNS = {"ID", "Title", "Due Date/Time", "Weather Sensitive", "Status"};

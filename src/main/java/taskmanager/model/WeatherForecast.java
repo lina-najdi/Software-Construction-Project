@@ -34,21 +34,30 @@ public class WeatherForecast {
         this.precipitationProbability = precipitationProbability;
     }
 
-    /** @return the location for this forecast */
-    public String getLocation() { return location; }
+/**
+ * Gets the geographic location for this weather forecast.
+ * @return the location for this forecast
+ */    public String getLocation() { return location; }
 
-    /** @return the forecast time */
-    public LocalDateTime getTime() { return time; }
+/**
+ * Gets the specific date and time for which this forecast is valid.
+ * @return the forecast time 
+ */    public LocalDateTime getTime() { return time; }
 
-    /** @return temperature in Celsius */
-    public double getTemperatureCelsius() { return temperatureCelsius; }
+/**
+ * Returns the forecasted temperature measured in Celsius.
+ * @return temperature in Celsius 
+ */    public double getTemperatureCelsius() { return temperatureCelsius; }
 
-    /** @return weather condition string */
-    public String getCondition() { return condition; }
+/**
+ * Gets a text description of the weather conditions, such as "Sunny" or "Cloudy".
+ * @return weather condition string 
+ */    public String getCondition() { return condition; }
 
     /**
-     * @return probability of precipitation as a value from 0.0 (no rain) to 1.0 (certain rain)
-     */
+ * Returns the likelihood of rain or snow.
+ * @return probability of precipitation as a value from 0.0 (no rain) to 1.0 (certain rain)
+ */
     public double getPrecipitationProbability() { return precipitationProbability; }
 
     @Override

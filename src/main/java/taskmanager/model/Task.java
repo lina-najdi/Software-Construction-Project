@@ -30,10 +30,16 @@ public class Task {
         this.weatherSensitive = weatherSensitive;
     }
 
-    /** @return the unique ID of this task */
+   /**
+ * Gets the unique identifier for this task.
+ * @return the unique ID of this task
+ */
     public String getId() { return id; }
 
-    /** @return the title of this task */
+    /**
+ * Gets the title of this task.
+ * @return the title of this task
+ */
     public String getTitle() { return title; }
 
     /**
@@ -42,7 +48,10 @@ public class Task {
      */
     public void setTitle(String title) { this.title = title; }
 
-    /** @return the description of this task, or null if not set */
+   /**
+ * Gets the detailed description of this task.
+ * @return the description of this task, or null if not set
+ */
     public String getDescription() { return description; }
 
     /**
@@ -51,7 +60,10 @@ public class Task {
      */
     public void setDescription(String description) { this.description = description; }
 
-    /** @return the due date and time of this task */
+    /**
+ * Gets the date and time when this task is due.
+ * @return the due date and time of this task
+ */
     public LocalDateTime getDueDateTime() { return dueDateTime; }
 
     /**
@@ -60,7 +72,10 @@ public class Task {
      */
     public void setDueDateTime(LocalDateTime dueDateTime) { this.dueDateTime = dueDateTime; }
 
-    /** @return true if this task is sensitive to weather conditions */
+    /**
+ * Checks if the task's completion depends on weather conditions.
+ * @return true if this task is sensitive to weather conditions
+ */
     public boolean isWeatherSensitive() { return weatherSensitive; }
 
     /**
@@ -69,6 +84,10 @@ public class Task {
      */
     public void setWeatherSensitive(boolean weatherSensitive) { this.weatherSensitive = weatherSensitive; }
 
+    /**
+ * Returns a string representation of the task for debugging and logging.
+ * @return a string containing task details
+ */
     @Override
     public String toString() {
         return "Task{id='" + id + "', title='" + title + "', due=" + dueDateTime + ", weatherSensitive=" + weatherSensitive + "}";

@@ -3,8 +3,7 @@ package taskmanager.impl;
 import taskmanager.api.TaskManager;
 
 /**
- * Concrete builder for constructing a DefaultTaskManager.
- * Obtained via TaskManager.builder().
+ * Constructs a new DefaultTaskManagerBuilder.
  */
 public class DefaultTaskManagerBuilder implements TaskManager.TaskManagerBuilder {
 

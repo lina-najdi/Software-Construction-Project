@@ -6,8 +6,10 @@ package taskmanager.exception;
  */
 public class InvalidTaskException extends RuntimeException {
     /**
-     * @param message description of why the task is invalid
-     */
+ * Constructs a new InvalidTaskException with the specified detail message.
+ *
+ * @param message description of why the task is invalid
+ */
     public InvalidTaskException(String message) {
         super(message);
     }

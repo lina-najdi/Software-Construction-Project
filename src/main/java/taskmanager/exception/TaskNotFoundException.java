@@ -5,8 +5,9 @@ package taskmanager.exception;
  */
 public class TaskNotFoundException extends RuntimeException {
     /**
-     * @param taskId the ID of the task that was not found
-     */
+ * Exception thrown when a requested task cannot be found in the system.
+ * @param taskId the ID of the task that was not found
+ */
     public TaskNotFoundException(String taskId) {
         super("Task not found: " + taskId);
     }

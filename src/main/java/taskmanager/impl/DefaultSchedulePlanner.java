@@ -1,15 +1,14 @@
 package taskmanager.impl;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
 import taskmanager.api.SchedulePlanner;
 import taskmanager.model.ScheduleRecommendation;
 import taskmanager.model.Task;
 import taskmanager.model.WeatherForecast;
-
-import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Schedulers;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Default implementation of SchedulePlanner.
@@ -28,8 +27,10 @@ public class DefaultSchedulePlanner implements SchedulePlanner {
     private final WeatherService weatherService;
 
     /**
-     * @param weatherService the service used to fetch weather data
-     */
+ * Constructs a new DefaultSchedulePlanner with the specified weather service.
+ * 
+ * @param weatherService the service used to fetch weather data
+ */
     public DefaultSchedulePlanner(WeatherService weatherService) {
         this.weatherService = weatherService;
     }

@@ -6,9 +6,10 @@ package taskmanager.exception;
  */
 public class WeatherAPIException extends RuntimeException {
     /**
-     * @param message description of the API failure
-     * @param cause   the underlying cause (e.g., IOException)
-     */
+ * Exception thrown when an error occurs while communicating with the weather service.
+ * @param message description of the API failure
+ *@param cause the underlying cause of the failure (e.g., IOException, JSONException)
+ */
     public WeatherAPIException(String message, Throwable cause) {
         super(message, cause);
     }
